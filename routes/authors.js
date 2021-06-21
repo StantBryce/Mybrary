@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             searchOptions: req.query.name 
         });
     } catch {
-        res.redirect('/');
+        res.redirect('/authors/new');
     }
 });
 

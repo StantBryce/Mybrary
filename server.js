@@ -16,8 +16,6 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use(express.urlencoded({ limit: '10mb', extended: false}))
 
-console.log(process.env.DATABASE_URL);
-
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -33,3 +31,5 @@ app.use('/', indexRouter);
 app.use('/authors', authorRouter);
 
 app.listen(process.env.PORT || 3000);
+
+//mongodb+srv://user:dN7FBbtrrqEnqKV@cluster0.97fcu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
